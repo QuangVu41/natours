@@ -16,11 +16,7 @@ router.post(
 
 router.use(authController.isLoggedIn);
 
-router.get(
-  '/',
-  bookingController.createBookingCheckout,
-  viewController.getOverview,
-);
+router.get('/', viewController.getOverview);
 
 router.get('/tour/:slug', viewController.getTour);
 
