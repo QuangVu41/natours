@@ -12,7 +12,6 @@ const signToken = (id) =>
   });
 
 const createSendToken = (user, statusCode, req, res) => {
-  console.log(req.headers);
   const token = signToken(user._id);
   const cookieOptions = {
     expires: new Date(
@@ -65,7 +64,7 @@ exports.login = catchAsync(async (req, res, next) => {
     return next(new AppError('Incorrect email or password!', 401));
 
   // 3) If everything ok, send token
-  createSendToken(user, 200, req, req, res);
+  createSendToken(user, 200, req, res);
 });
 
 exports.logout = (req, res, next) => {
