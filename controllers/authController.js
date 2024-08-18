@@ -51,7 +51,7 @@ exports.signup = catchAsync(async (req, res, next) => {
 });
 
 exports.login = catchAsync(async (req, res, next) => {
-  console.log(req.headers['x-fowarded-proto']);
+  console.log(req.headers['x-forwarded-proto']);
   const { email, password } = req.body;
 
   // 1) Check if email and password exist
